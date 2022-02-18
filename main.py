@@ -82,6 +82,7 @@ while(1):
         cursor.execute(query)
         print("STUDENT RECORD SAVED IN TABLE")
         db.commit()
+
 #searching student details
     if ch==6:
         print("1:TO SERACH BY STUDENT ROLL NUMBER")
