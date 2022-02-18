@@ -3,7 +3,7 @@ import mysql.connector as sql
 import sys
 
 #connect to mysql database
-db=sql.connect(host="localhost",user="root",passwd="ajaysharma08",database="mysql")
+db=sql.connect(host="localhost",user="root",passwd="root",database="mysql")
 cursor=db.cursor()
 #check database is connected
 if db.is_connected():
@@ -25,7 +25,7 @@ while(1):
     print("8:TO DELETE STUDENT ")
     print("9:EXIT")
     print()
-    ch=int(input("ENTER YOUR CHOICE"))
+    ch=int(input("ENTER YOUR CHOICE: "))
 #Creating table for the first time
     if ch==1:
         try:
