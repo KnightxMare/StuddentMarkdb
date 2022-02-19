@@ -26,6 +26,7 @@ while(1):
     print("9:EXIT")
     print()
     ch=int(input("ENTER YOUR CHOICE: "))
+
 #Creating table for the first time
     if ch==1:
         try:
@@ -35,6 +36,7 @@ while(1):
             mycon.commit()
         except:
             print("sorry some error occured")
+
 #Displaying tables of database 
     if ch==2:
         try:
@@ -43,15 +45,17 @@ while(1):
                 print(i)
         except:
             print("sorry some error occured")
+
 #Displaying Tables fields
     if ch==3:
         try:
-            table=input("enter table name")
+            table=input("enter table name: ")
             cursor.execute("desc %s"%table)
             for i in cursor:
                 print(i)
         except:
             print("sorry some error occured")
+
 #Displaying all records of table
     if ch==4:
         try:
@@ -65,6 +69,7 @@ while(1):
                 print()
         except:
             print("SORRY SOME ERROR OCCURED")
+
 #inserting new record into table
     if ch==5:
         r=int(input("Enter student roll number"))
@@ -123,8 +128,7 @@ while(1):
                     print()
             except:
                 print("SORRY SOME ERROR OCCURED")
-            
-            
+                       
 #TO update student marks
     if ch==7:
         try:
