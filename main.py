@@ -72,15 +72,15 @@ while(1):
 
 #inserting new record into table
     if ch==5:
-        r=int(input("Enter student roll number"))
-        name=input("ENTER STUDENT NAME")
-        c=input("ENTER CLASS OF STUDENT")
-        s=input("ENTER SECTION OF STUDENT")
-        m1=int(input("ENTER MARKS IN SUBJECT1"))
-        m2=int(input("ENTER MARKS IN SUBJECT2"))
-        m3=int(input("ENTER MARKS IN SUBJECT3"))
-        m4=int(input("ENTER MARKS IN SUBJECT4"))
-        m5=int(input("ENTER MARKS IN SUBJECT5"))
+        r=int(input("Enter student roll number: "))
+        name=input("ENTER STUDENT NAME: ")
+        c=input("ENTER CLASS OF STUDENT: ")
+        s=input("ENTER SECTION OF STUDENT: ")
+        m1=int(input("ENTER MARKS IN SUBJECT1: "))
+        m2=int(input("ENTER MARKS IN SUBJECT2: "))
+        m3=int(input("ENTER MARKS IN SUBJECT3: "))
+        m4=int(input("ENTER MARKS IN SUBJECT4: "))
+        m5=int(input("ENTER MARKS IN SUBJECT5: "))
         t=m1+m2+m3+m4+m5
         per=t/5
         query="insert into student values(%d,'%s','%s','%s',%d,%d,%d,%d,%d,%d,%d)"%(r,name,c,s,m1,m2,m3,m4,m5,t,per)
@@ -92,11 +92,11 @@ while(1):
     if ch==6:
         print("1:TO SERACH BY STUDENT ROLL NUMBER")
         print("2:TO SEARCH BY STUDENT NAME")
-        c=int(input("ENTER YOUR CHOICE"))
+        c=int(input("ENTER YOUR CHOICE: "))
         #searching by student roll number
         if c==1:
             try:
-                roll=int(input("ENTER STUDENT ROLL NUMBER TO SEARCH"))
+                roll=int(input("ENTER STUDENT ROLL NUMBER TO SEARCH: "))
                 qry="select * from student where roll=%d"%roll
                 cursor.execute(qry)
                 data=cursor.fetchall()
@@ -114,7 +114,7 @@ while(1):
         #searching by student name
         if c==2:
             try:
-                name=input("ENTER STUDENT NAME TO SEARCH")
+                name=input("ENTER STUDENT NAME TO SEARCH: ")
                 qry="select * from student where name='%s'"%name
                 cursor.execute(qry)
                 data=cursor.fetchall()
@@ -132,18 +132,18 @@ while(1):
 #TO update student marks
     if ch==7:
         try:
-            roll=int(input("ENTER ROLL NUMBER OF STUDENT WHOSE MARKS TO BE UPDATE"))
+            roll=int(input("ENTER ROLL NUMBER OF STUDENT WHOSE MARKS TO BE UPDATE: "))
             qry="select * from student where roll=%d"%roll
             cursor.execute(qry)
             data=cursor.fetchall()
             if len(data)==0:
                 print("STUDENT NOT FOUND")
             else:
-                m1=int(input("ENTER UPDATED MARKS IN SUBJECT1"))
-                m2=int(input("ENTER UPDATED MARKS IN SUBJECT2"))
-                m3=int(input("ENTER UPDATED MARKS IN SUBJECT3"))
-                m4=int(input("ENTER UPDATED MARKS IN SUBJECT4"))
-                m5=int(input("ENTER UPDATED MARKS IN SUBJECT5"))                
+                m1=int(input("ENTER UPDATED MARKS IN SUBJECT1: "))
+                m2=int(input("ENTER UPDATED MARKS IN SUBJECT2: "))
+                m3=int(input("ENTER UPDATED MARKS IN SUBJECT3: "))
+                m4=int(input("ENTER UPDATED MARKS IN SUBJECT4: "))
+                m5=int(input("ENTER UPDATED MARKS IN SUBJECT5: "))                
                 t=m1+m2+m3+m4+m5
                 per=t/5
                 qry="update STUDENT SET mark1=%d,mark2=%d,mark3=%d,mark4=%d,mark5=%d,total=%d,per=%d where roll=%d"%(m1,m2,m3,m4,m5,t,per,roll)
@@ -156,7 +156,7 @@ while(1):
 # Delete student record from table
     if ch==8:
         try:
-            roll=int(input("ENTER STUDENT ROLL NUMBER ,YOU WANT TO DELETE"))
+            roll=int(input("ENTER STUDENT ROLL NUMBER ,YOU WANT TO DELETE: "))
             qry="select * from student where roll=%d"%roll
             cursor.execute(qry)
             data=cursor.fetchall()
